@@ -43,7 +43,7 @@ if not os.path.exists(COCO_MODEL_PATH):
 
 class CustomConfig(Config):
     def __init__(self, num_classes, steps_epoch=500, image_size=832):
-        self.NUM_CLASSES = num_classes + 1
+        self.NUM_CLASSES = num_classes + 3
         self.STEPS_PER_EPOCH = steps_epoch
         self.IMAGE_MAX_DIM = image_size
         self.IMAGE_MIN_DIM = image_size
