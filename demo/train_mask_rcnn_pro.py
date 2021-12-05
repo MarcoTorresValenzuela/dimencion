@@ -33,14 +33,14 @@ DRIVE_ROOT_DIR = "/content/gdrive/MyDrive/pysource_mrcnn_pro/"
 
 # directorio para ir a la carpeta donde se encuentra la ultima red entrenada 
 # se tiene que editar cada vez que se entrene ,ya que cada vez esta una nueva carpeta
-ROOT_DIR_train = "/content/gdrive/MyDrive/pysource_mrcnn_pro/project_matricula/object20211204T0052"
+#ROOT_DIR_train = "/content/gdrive/MyDrive/pysource_mrcnn_pro/project_matricula/object20211204T0052"
 
 
 # Local path to trained weights file
 
 # editado para poder entrenar red ya entrenada ,si no ha entrenado nada, remplazar por:
-#COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
-COCO_MODEL_PATH = os.path.join(ROOT_DIR_train, "mask_rcnn_object_0010.h5")
+COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
+#COCO_MODEL_PATH = os.path.join(ROOT_DIR_train, "mask_rcnn_object_0010.h5")
 # Download COCO trained weights from Releases if needed
 if not os.path.exists(COCO_MODEL_PATH):
     utils.download_trained_weights(COCO_MODEL_PATH)
