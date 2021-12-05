@@ -31,18 +31,23 @@ warnings.filterwarnings('ignore')
 
 DRIVE_ROOT_DIR = "/content/gdrive/MyDrive/pysource_mrcnn_pro/"
 
-
+# directorio para ir a la carpeta donde se encuentra la ultima red entrenada 
+# se tiene que editar cada vez que se entrene ,ya que cada vez esta una nueva carpeta
+ROOT_DIR_train = "/content/gdrive/MyDrive/pysource_mrcnn_pro/project_matricula/object20211204T0052"
 
 
 # Local path to trained weights file
-COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
+
+# editado para poder entrenar red ya entrenada ,si no ha entrenado nada, remplazar por:
+#COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
+COCO_MODEL_PATH = os.path.join(ROOT_DIR_train, "mask_rcnn_object_0010.h5")
 # Download COCO trained weights from Releases if needed
 if not os.path.exists(COCO_MODEL_PATH):
     utils.download_trained_weights(COCO_MODEL_PATH)
 
 
 class CustomConfig(Config):
-    def __init__(self, num_classes, steps_epoch=500, image_size=832):
+    def __init__(self, num_classes, steps_epoch=1000, image_size=832):
         self.NUM_CLASSES = num_classes + 3
         self.STEPS_PER_EPOCH = steps_epoch
         self.IMAGE_MAX_DIM = image_size
@@ -76,7 +81,7 @@ class CustomConfig(Config):
     # TRAIN_ROIS_PER_IMAGE = 32
 
     # Use a small epoch since the data is simple
-    STEPS_PER_EPOCH = 500
+    STEPS_PER_EPOCH = 1000
 
     # use small validation steps since the epoch is small
     VALIDATION_STEPS = STEPS_PER_EPOCH // 100
