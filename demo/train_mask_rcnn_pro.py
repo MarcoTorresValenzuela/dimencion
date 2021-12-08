@@ -47,7 +47,7 @@ if not os.path.exists(COCO_MODEL_PATH):
 
 
 class CustomConfig(Config):
-    def __init__(self, num_classes, steps_epoch=2500, image_size=832):
+    def __init__(self, num_classes, steps_epoch=2000, image_size=832):
         self.NUM_CLASSES = num_classes + 3
         self.STEPS_PER_EPOCH = steps_epoch
         self.IMAGE_MAX_DIM = image_size
@@ -81,7 +81,7 @@ class CustomConfig(Config):
     # TRAIN_ROIS_PER_IMAGE = 32
 
     # Use a small epoch since the data is simple
-    STEPS_PER_EPOCH = 2500
+    STEPS_PER_EPOCH = 2000
 
     # use small validation steps since the epoch is small
     VALIDATION_STEPS = STEPS_PER_EPOCH // 100
