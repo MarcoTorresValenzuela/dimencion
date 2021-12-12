@@ -40,7 +40,7 @@ DRIVE_ROOT_DIR = "/content/gdrive/MyDrive/pysource_mrcnn_pro/"
 
 # editado para poder entrenar red ya entrenada ,si no ha entrenado nada, remplazar por:
 COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
-#COCO_MODEL_PATH = os.path.join(ROOT_DIR_train, "mask_rcnn_object_0010.h5")
+#COCO_MODEL_PATH = os.path.join(ROOT_DIR_train, "mask_rcnn_object_0044.h5")
 # Download COCO trained weights from Releases if needed
 if not os.path.exists(COCO_MODEL_PATH):
     utils.download_trained_weights(COCO_MODEL_PATH)
@@ -63,7 +63,7 @@ class CustomConfig(Config):
     # Train on 1 GPU and 8 images per GPU. We can put multiple images on each
     # GPU because the images are small. Batch size is 8 (GPUs * images/GPU).
     GPU_COUNT = 1
-    IMAGES_PER_GPU = 2
+    IMAGES_PER_GPU = 1
 
     # Number of classes (including background)
     #NUM_CLASSES = 1 + 1  # background + 3 shapes
