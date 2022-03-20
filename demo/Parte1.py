@@ -29,7 +29,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-DRIVE_ROOT_DIR = "/content/gdrive/MyDrive/pysource_mrcnn_pro/"
+DRIVE_ROOT_DIR = "/content/gdrive/MyDrive/Parte1/"
 
 # directorio para ir a la carpeta donde se encuentra la ultima red entrenada 
 # se tiene que editar cada vez que se entrene ,ya que cada vez esta una nueva carpeta
