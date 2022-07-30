@@ -86,7 +86,7 @@ class CustomConfig(Config):
     # use small validation steps since the epoch is small
     VALIDATION_STEPS = STEPS_PER_EPOCH // 100
 
-    DETECTION_MIN_CONFIDENCE = 0.9
+    DETECTION_MIN_CONFIDENCE = 0.5
 
 
 
